@@ -210,4 +210,6 @@ Use the error messages to guide your work:
   better sense of the errors.
 
 Fix the errors in each of the files in `lib/`. Then confirm the fix by running
-`learn test` again.
+`pytest` again.
+
+Commit and push your work using `git` when all of your tests have passed!
