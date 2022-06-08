@@ -80,8 +80,8 @@ Will result in:
 
 ```console
 File "<stdin>", line 1
-    2*#
-      ^
+    2 * #
+        ^
 SyntaxError: invalid syntax
 ```
 
@@ -124,11 +124,78 @@ stopped by the user. (The easiest way to do this in the terminal is `ctrl + c`)
 
 ### Exceptions
 
-A `DivisionError` is caused when a given number is divided by 0.
+[Exceptions](https://docs.python.org/3/library/exceptions.html) cover a wide
+variety of errors that you may see when running Python code. Our `NameError`
+from earlier is one example of a Python exception.
+
+Exceptions pop up when the interpreter knows what to do with a piece of code
+but is unable to complete the action. A key difference between the other types
+of errors and exceptions is that the Python interpreter can continue reading
+your application after an exception- you just need to tell it what to expect.
+
+There are many types of exceptions in Python; here are a few of the most
+common:
+
+#### AssertionError
+
+An `assert()` statement tells the interpreter that the code inside of it must
+proceed without error or exception. If an assertion fails, an AssertionError is
+raised.
+
+```console
+assert(1 == 2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AssertionError
+```
+
+#### IndexError and KeyError
+
+IndexErrors arise when you try to access an element at an index past the end of
+a list. Key errors relate to `dict` objects in Python (similar to JSON
+objects). If a key is referenced but does not exist, this exception is thrown.
+
+```console
+> list = [0, 1, 2, 3, 4]
+> dict = {'a':1, 'b':2, 'c':3}
+
+> list[10]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+
+> dict['d']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'd'
+```
+
+#### NameError
+
+A NameError arises when a name is referenced before it has been defined.
+
+```console
+> flatiron_school
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'flatiron_school' is not defined
+```
+
+#### TypeError
+
+TypeErrors arise when an operation or function is applied to an object of the
+wrong type.
+
+```console
+> wrong_type = None + 123
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+```
 
 ## Instructions
 
-To get started, run `learn test --f-f` to run the first test in the test suite.
+To get started, run `pytest -x` to run the first test in the test suite.
 Use the error messages to guide your work:
 
 - Read the errors. Scroll through the entire output to get a sense of what the
