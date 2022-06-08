@@ -23,7 +23,7 @@ $ python lib/a_name_error.py
 
 Error messages have 3 parts:
 
-```txt
+```console
 File "lib/a_name_error.py",
 line 3, in <module>
     print(hello_world)
@@ -32,7 +32,7 @@ NameError: name 'hello_world' is not defined
 
 1. The location of the error, the "where":
 
-   ```txt
+   ```console
    "lib/a_name_error.py", line 3, in <module>:
    ```
 
@@ -42,15 +42,15 @@ NameError: name 'hello_world' is not defined
 
 2. The type of error, the "who":
 
-   ```txt
+   ```console
    NameError:
    ```
 
-   This is a [Python Exception Type](https://docs.python.org/3/library/exceptions.html).
+   This is a [Python Error Type](https://docs.python.org/3/tutorial/errors.html).
 
 3. The description, the "why":
 
-   ```txt
+   ```console
    name 'hello_world' is not defined
    ```
 
@@ -64,27 +64,7 @@ criminal that caused the error in the first place.
 Errors are clues, and reading them is the interpreter telling you what to do to
 fix the program and move on.
 
-## Four Common Error Types
-
-### Name Errors
-
-Name errors are caused when a given name is invalid or undefined. Whenever the
-Ruby interpreter encounters a word it doesn't recognize, it assumes that word is
-the name of a variable or a method. If that word was never defined as either a
-variable or a method, it will result in a name error. Try this out in IRB:
-
-```console
-$  irb
-2.7.3 :001 > a_variable
-NameError (undefined local variable or method `a_variable' for main:Object)
-2.7.3 :002 > a_variable = 7
- => 7
-2.7.3 :003 > a_variable
- => 7
-```
-
-Trying to access `a_variable` before assigning it a value results in a
-`NameError`, which we can fix by assigning it some value.
+## Three Common Error Types
 
 ### Syntax Errors
 
@@ -92,44 +72,57 @@ Syntax errors are pretty self-explanatory: they're the result of incorrect
 syntax. Thankfully, they're usually followed by a guess about the location of
 the error. For instance:
 
-```rb
-2.times do
-  puts "hi"
+```py
+2 * #
 ```
 
 Will result in:
 
-```txt
-2: syntax error, unexpected end-of-input, expecting keyword_end
+```console
+File "<stdin>", line 1
+    2*#
+      ^
+SyntaxError: invalid syntax
 ```
 
-Here, Ruby is saying that on line 2, there is a missing `end` (every `do`
-keyword must be followed by some code and then an `end` keyword). Always read
-the full details of syntax errors and look for line numbers, which usually
-appear at the beginning of the error message.
+Here, Python is saying that on line 1, there is a missing number (every `*`
+operator must be preceded and followed by a number or variable with a numerical
+value). Always read the full details of syntax errors and look for line numbers,
+which usually appear at the beginning of the error message.
 
-> **Note**: You won't be able to reproduce the above syntax error using IRB,
-> because IRB won't execute the code until you enter a matching `end` keyword
-> for the `do` block. You can see this error by creating a Ruby file, adding the
-> code above, and executing the file.
+### Logic Errors
 
-### Type Errors
+Logic errors are often difficult to find because they are not perceived as
+errors by the Python interpreter itself. To find a logic error, a programmer
+will often need to comb through their code line by line. Debugging tools such
+as `pdb` (which we will cover later on in Phase 3) are very helpful for
+locating and fixing logic errors.
 
-When you try and do a mathematical operation on two objects of a different type,
-you will receive a `TypeError`. For example if you try and add a string to an
-integer, Ruby will complain.
-
-```rb
-1 + "1"
+```py
+count = 1
+while count < 100:
+    print("%i" % count)
 ```
 
-Will produce the following error:
+Will produce the following output:
 
-```txt
-TypeError: String can't be coerced into Fixnum
+```console
+1
+1
+1
+1
+1
+1
+1
+...
 ```
 
-### Division Errors
+The programmer here forgot to increase the count during each iteration of the
+`while` loop. This is perfectly valid Python code, so the interpreter will not
+throw an error, but the loop will continue forever until it is manually
+stopped by the user. (The easiest way to do this in the terminal is `ctrl + c`)
+
+### Exceptions
 
 A `DivisionError` is caused when a given number is divided by 0.
 
