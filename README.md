@@ -8,50 +8,53 @@
 ## Introduction
 
 In this lab, you'll be reading error messages from tests. This lab is designed
-so that both running the files _and_ running the test suite via the `learn test`
+so that both running the files _and_ running the test suite via the `pytest`
 command will show the error messages for you to decode. Moving forward though,
 you'll be reading error messages mainly through running the test suite.
 
 ## Reading Error Messages
 
-Let's start by running some of the Ruby code in the `lib` folder to produce an
+Let's start by running some of the Python code in the `lib` folder to produce an
 error message. Run this in your terminal:
 
 ```console
-$ ruby lib/a_name_error.rb
+$ python lib/a_name_error.py
 ```
 
 Error messages have 3 parts:
 
 ```txt
-lib/a_name_error.rb:3:in `<main>': undefined local variable or method `hello_world' for main:Object (NameError)
+File "lib/a_name_error.py",
+line 3, in <module>
+    print(hello_world)
+NameError: name 'hello_world' is not defined
 ```
 
 1. The location of the error, the "where":
 
    ```txt
-   lib/a_name_error.rb:3:in `<main>':
+   "lib/a_name_error.py", line 3, in <module>:
    ```
 
-   - `lib/a_name_error.rb` is the file the error occurred in.
-   - `3` is the line of code with the error.
-   - `<main>` is the scope of the error.
+   - `"lib/a_name_error.py"` is the file the error occurred in.
+   - `line 3` is the line of code with the error.
+   - `<module>` is the scope of the error.
 
-2. The description, the "why":
+2. The type of error, the "who":
 
    ```txt
-   undefined local variable or method `hello_world' for main:Object
+   NameError:
+   ```
+
+   This is a [Python Exception Type](https://docs.python.org/3/library/exceptions.html).
+
+3. The description, the "why":
+
+   ```txt
+   name 'hello_world' is not defined
    ```
 
    The interpreter does the best job it can to tell you what it thinks went wrong.
-
-3. The type of error, the "who":
-
-   ```txt
-   (NameError)
-   ```
-
-   This is a [Ruby Error Type](http://www.ruby-doc.org/core-2.2.0/Exception.html).
 
 You've solved games of _Clue_ with less information. This is one of the best
 parts of programming: debugging and fixing errors. It's like you're a detective
