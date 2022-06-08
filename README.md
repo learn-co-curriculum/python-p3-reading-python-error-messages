@@ -187,10 +187,10 @@ TypeErrors arise when an operation or function is applied to an object of the
 wrong type.
 
 ```console
-> wrong_type = None + 123
+> wrong_type = 'abc' + 123
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+TypeError: can only concatenate str (not "int") to str
 ```
 
 ## Instructions
