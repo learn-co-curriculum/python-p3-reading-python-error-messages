@@ -2,8 +2,29 @@
 
 ## Learning Goals
 
-- Read the different parts of an error message
-- Identify common types of errors
+- Read the different parts of an error message.
+- Identify common types of errors.
+
+***
+
+## Key Vocab
+
+- **Interpreter**: a program that executes other programs. Python programs
+require the Python interpreter to be installed on your computer so that they
+can be run.
+- **Python Shell**: an interactive interpreter that can be accessed from the
+command line.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+causing a program to crash.
+- **Code Block**: a collection of code that is interpreted together. Python
+groups code blocks by indentation level.
+- **Function**: a named code block that performs a sequence of actions when it
+is called.
+- **Scope**: the area in your program where a specific variable can be called.
+
+***
 
 ## Introduction
 
@@ -11,6 +32,8 @@ In this lab, you'll be reading error messages from tests. This lab is designed
 so that both running the files _and_ running the test suite via the `pytest`
 command will show the error messages for you to decode. Moving forward though,
 you'll be reading error messages mainly through running the test suite.
+
+***
 
 ## Reading Error Messages
 
@@ -63,6 +86,8 @@ criminal that caused the error in the first place.
 
 Errors are clues, and reading them is the interpreter telling you what to do to
 fix the program and move on.
+
+***
 
 ## Three Common Error Types
 
@@ -192,6 +217,8 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: can only concatenate str (not "int") to str
 ```
+
+***
 
 ## Instructions
 
