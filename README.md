@@ -222,7 +222,7 @@ TypeError: can only concatenate str (not "int") to str
 
 ## Instructions
 
-To get started, run `pytest -x` to run the first test in the test suite.
+To get started, run `pipenv run pytest -x` to run the first test in the test suite.
 Use the error messages to guide your work:
 
 - Read the errors. Scroll through the entire output to get a sense of what the
