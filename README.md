@@ -53,7 +53,7 @@ line 3, in <module>
 NameError: name 'hello_world' is not defined
 ```
 
-1. The location of the error, the "where":
+The location of the error, the "where":
 
    ```console
    "lib/a_name_error.py", line 3, in <module>:
@@ -63,7 +63,7 @@ NameError: name 'hello_world' is not defined
    - `line 3` is the line of code with the error.
    - `<module>` is the scope of the error.
 
-2. The type of error, the "who":
+The type of error, the "who":
 
    ```console
    NameError:
@@ -71,7 +71,7 @@ NameError: name 'hello_world' is not defined
 
    This is a [Python Error Type](https://docs.python.org/3/tutorial/errors.html).
 
-3. The description, the "why":
+The description, the "why":
 
    ```console
    name 'hello_world' is not defined
