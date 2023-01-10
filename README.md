@@ -37,7 +37,7 @@ you'll be reading error messages mainly through running the test suite.
 
 ## Reading Error Messages
 
-Let's start by running some of the Python code in the `lib` folder to produce an
+Let's start by running some of the Python code in the `lib/` folder to produce an
 error message. Run this in your terminal:
 
 ```console
