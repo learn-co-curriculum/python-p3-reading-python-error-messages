@@ -12,7 +12,7 @@ class TestNameError:
         contains defined name "hello_world"
         '''
 
-        runpy.run_path('lib/a_name_error.py')
+        runpy.run_path=('lib/a_name_error.py')
 
 class TestSyntaxError:
     '''
