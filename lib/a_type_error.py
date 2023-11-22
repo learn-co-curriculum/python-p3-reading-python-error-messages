@@ -9,4 +9,5 @@ class TestTypeError:
         adds two numbers
         '''
         with pytest.raises(TypeError):
+            # Execute the code directly without using runpy.run_path
             lib.a_type_error.wrong_type = 'abc' + str(123)
